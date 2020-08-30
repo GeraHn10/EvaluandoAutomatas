@@ -1,4 +1,5 @@
 import json
+from Evaluadores import *
 
 with open('evaluando.json') as contenido:
  defincionAutomata = json.load(contenido)
@@ -9,4 +10,6 @@ with open('evaluando.json') as contenido:
         estados_aceptados = automataValores['accepting_states']
         transiciones = automataValores['transitions']
 
-print(transiciones)
+
+
+
