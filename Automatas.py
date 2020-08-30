@@ -40,15 +40,31 @@ class Automatas:
        #print(newDeltWord) 
        #print(trans[1])
        deltaCerraduraEpsilon.append((newDeltWord,alph,tuples[0]))
-
+   print(deltaCerraduraEpsilon)
    cerraduradeltaEpsilon=[]
    
    for delt in deltaCerraduraEpsilon:
      #print(delt)
+     posibleWord=""
      for char in delt[0]:
        #print(char)
        for trand in cerraduraEpsilon:
-          if char==
+          #print(trand)
+          if char==trand[0]:
+            posibleWord=posibleWord+trand[1]
+     #print(posibleWord)         
+     cerraduradeltaEpsilon.append((posibleWord,delt[1],delt[2])) 
+
+   for i in range(len(cerraduradeltaEpsilon)):
+      newword = list(OrderedDict.fromkeys(cerraduradeltaEpsilon[i][0]))
+      concatword=""
+      for c in newword:
+          print(newword)
+          concatword= concatword+c
+      cerraduradeltaEpsilon[i]=(concatword,cerraduradeltaEpsilon[i][1],cerraduradeltaEpsilon[0][2]) 
+      concatword=""
+   print(cerraduradeltaEpsilon)
+   transiciones=[]
 
 
 
