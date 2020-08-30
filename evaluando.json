@@ -1,14 +1,20 @@
 {"Automata":[
-    {
-    "alphabet": ["0","1"],
-    "states": ["q0", "q1"],
-    "initial_state": "q0",
-    "accepting_states": ["q1"],
-    "transitions": [
-        ["q0","1","q1"],
-        ["q1","1","q1"],
-        ["q1","0","q1"]
-      ]
-    }
-  ]
+  {
+  "alphabet": ["0","1"],
+  "states": ["A", "B","C","D","F"],
+  "initial_state": "A",
+  "accepting_states": ["F"],
+  "transitions": [
+      ["A","e","B"],
+      ["A","e","D"],
+      ["D","1","D"],
+      ["D","0","F"],
+      ["B","0","C"],
+      ["B","1","F"],
+      ["C","1","B"],
+      ["C","e","F"],
+      ["F","e","F"]
+    ]
+  }
+]
 }

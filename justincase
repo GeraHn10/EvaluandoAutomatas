@@ -1,0 +1,19 @@
+def convertToDict(self,transitions):
+    transicionesdict={}
+    for trans in transitions:
+       transicionesdict[(trans[0],trans[1])]=trans[2]
+    return transicionesdict
+   {"Automata":[
+    {
+    "alphabet": ["0","1"],
+    "states": ["q0", "q1"],
+    "initial_state": "q0",
+    "accepting_states": ["q1"],
+    "transitions": [
+        ["q0","1","q1"],
+        ["q1","1","q1"],
+        ["q1","0","q1"]
+      ]
+    }
+  ]
+}
