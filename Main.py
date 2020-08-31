@@ -18,6 +18,7 @@ with open('evaluando.json') as contenido:
                   
 ev=Automatas()
 ev.nfae_dfa(alfabeto,estados,estados_iniciales,estados_aceptados,transiciones)
+#ev.nfatodfa(alfabeto,estados,estados_iniciales,estados_aceptados,transiciones)
 #nfa_transition_dict[(starting_state, transition_symbol)] = [ending_state]
 
 

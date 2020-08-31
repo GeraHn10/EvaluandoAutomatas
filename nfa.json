@@ -1,0 +1,15 @@
+
+{"Automata":[
+    {
+    "alphabet": ["0","1"],
+    "states": ["A", "B"],
+    "initial_state": "A",
+    "accepting_states": ["B"],
+    "transitions": [
+        ["A","0","A"],
+        ["A","1","A"],
+        ["A","1","B"]
+      ]
+    }
+  ]
+  }

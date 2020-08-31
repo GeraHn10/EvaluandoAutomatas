@@ -70,7 +70,7 @@ class Automatas:
       cerraduradeltaEpsilon[i]=(concatword,cerraduradeltaEpsilon[i][1],cerraduradeltaEpsilon[i][2]) 
       concatword=""
    
-   print(cerraduradeltaEpsilon)
+   #print(cerraduradeltaEpsilon)
 
    
 
@@ -85,15 +85,26 @@ class Automatas:
     ing=True
     estado=""
     for aux in transhelp:
-      if test[2]==aux[2]:
+      if test[2]==aux[0] or test[2] == '' :
         ing=False
     if ing==True:
-      for trans in cerraduradeltaEpsilon:
-        
+     if test[2] not in states:
+       states.append(test[2])
+     for alp in alphabet: 
+       val="" 
+       #print(test[2])
+       for cahr in test[2]:
+         #print(cahr)
+         for trans in cerraduradeltaEpsilon:
+            #print(trans)
+            if trans[2]==cahr and trans[1]==alp:
+              val = val + trans[0]
+       transhelp.append((test[2],alp,val))  
 
 
-
-   
+   print(transhelp)
+   print("----------Estados------------------")
+   print(states)
 
    
    #print(states)
@@ -112,6 +123,39 @@ class Automatas:
   def expresionregular(self,expresion):
     val=True
 
+  
+  def nfatodfa(self,alphabet, states, initial_state, accepting_states, transitions):
+
+   transhelp=[]
+
+   
+   for start in transitions:
+     if start[2]==initial_state:
+        transhelp.append((start[2],start[1],start[0]))
+
+   
+   for test in transhelp:
+    ing=True
+    estado=""
+    for aux in transhelp:
+      if test[2]==aux[0] or test[2] == '' :
+        ing=False
+    if ing==True:
+     if test[2] not in states:
+       states.append(test[2])
+     for alp in alphabet: 
+       val="" 
+       #print(test[2])
+       for cahr in test[2]:
+         #print(cahr)
+         for trans in transitions:
+            #print(trans)
+            if trans[0]==cahr and trans[1]==alp:
+              val = val + trans[0]
+       transhelp.append((test[2],alp,val))  
+
+
+   print(transhelp)
 
         
       
