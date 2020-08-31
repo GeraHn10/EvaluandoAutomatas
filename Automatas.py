@@ -17,8 +17,10 @@ class Automatas:
          newCerr=newCerr+trans[2]
      newCerr=newCerr+est
      cerraduraEpsilon.append((est,newCerr))
-    
+
    
+   print(cerraduraEpsilon)
+   print("---------------Cerradura Epsilon-------------------------") 
    for i in range(len(cerraduraEpsilon)):
       newword = list(OrderedDict.fromkeys(cerraduraEpsilon[i][1]))
       concatword=""
@@ -41,6 +43,7 @@ class Automatas:
        #print(trans[1])
        deltaCerraduraEpsilon.append((newDeltWord,alph,tuples[0]))
    print(deltaCerraduraEpsilon)
+   print("------------Gerardo Gonzales--------------")
    cerraduradeltaEpsilon=[]
    
    for delt in deltaCerraduraEpsilon:
@@ -52,21 +55,43 @@ class Automatas:
           #print(trand)
           if char==trand[0]:
             posibleWord=posibleWord+trand[1]
-     #print(posibleWord)         
+     #print(posibleWord)
+     #print(delt[2])        
      cerraduradeltaEpsilon.append((posibleWord,delt[1],delt[2])) 
+
+   #print(cerraduradeltaEpsilon) 
 
    for i in range(len(cerraduradeltaEpsilon)):
       newword = list(OrderedDict.fromkeys(cerraduradeltaEpsilon[i][0]))
       concatword=""
+      #print(newword)
       for c in newword:
-          print(newword)
           concatword= concatword+c
-      cerraduradeltaEpsilon[i]=(concatword,cerraduradeltaEpsilon[i][1],cerraduradeltaEpsilon[0][2]) 
+      cerraduradeltaEpsilon[i]=(concatword,cerraduradeltaEpsilon[i][1],cerraduradeltaEpsilon[i][2]) 
       concatword=""
-   print(cerraduradeltaEpsilon)
+   
+   #print(cerraduradeltaEpsilon)
+
    transiciones=[]
 
+   #NFa simple to dfa
+   for cerraduradeltaEpsilon in 
+   
+   #print(states)
+    
+   for accepting in accepting_states:
+     val=False
+     for est in states:
+       if accepting in est:
+         val=True
+         if est != accepting and val==True:
+           accepting_states.append(est)   
+   #print(accepting_states)
 
+   print(cerraduradeltaEpsilon)
+
+  def expresionregular(self,expresion):
+    val=True
 
 
         
