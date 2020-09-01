@@ -116,47 +116,20 @@ class Automatas:
          val=True
          if est != accepting and val==True:
            accepting_states.append(est)   
-   #print(accepting_states)
-
+   print(accepting_states)
+   
    #print(cerraduradeltaEpsilon)
+   transicionesfinales=[]
+   for t in transhelp:
+     if(t[2]!=''):
+       transicionesfinales.append((t[0],t[1],t[2]))
+   
+   #print(transicionesfinales)
 
   def expresionregular(self,expresion):
     val=True
 
   
-  def nfatodfa(self,alphabet, states, initial_state, accepting_states, transitions):
-
-   transhelp=[]
-
-   
-   for start in transitions:
-     if start[2]==initial_state:
-        transhelp.append((start[2],start[1],start[0]))
-
-   
-   for test in transhelp:
-    ing=True
-    estado=""
-    for aux in transhelp:
-      if test[2]==aux[0] or test[2] == '' :
-        ing=False
-    if ing==True:
-     if test[2] not in states:
-       states.append(test[2])
-     for alp in alphabet: 
-       val="" 
-       #print(test[2])
-       for cahr in test[2]:
-         #print(cahr)
-         for trans in transitions:
-            #print(trans)
-            if trans[0]==cahr and trans[1]==alp:
-              val = val + trans[0]
-       transhelp.append((test[2],alp,val))  
-
-
-   print(transhelp)
-
         
       
       

@@ -1,5 +1,6 @@
 from Automatas import Automatas
-
+import networkx as nx
+import matplotlib.pyplot as plt
 
 
 class Evaluadores():
@@ -37,5 +38,22 @@ class Evaluadores():
     return -1 
 
    
+   def imprimir(self, estados, transiciones):
+        que = nx.DiGraph()
 
+        for arre in estados:
+            que.add_node(arre)
+        for t in transiciones:
+            que.add_edge(t[2], t[0])
+
+        #pos = nx.spring_layout(que)
+        #plt.figure()
+        # nx.draw(que, \
+        # node_size=500,node_color='pink',alpha=0.9,\
+        # labels={node:node for node in que.nodes()})
+        # nx.draw_networkx_labels(que, edges_labels={}, with_labels = True)
+        # plt.axis('off')
+
+        nx.draw(que, with_labels = True)
+        plt.show()
       

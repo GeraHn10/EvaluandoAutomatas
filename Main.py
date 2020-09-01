@@ -1,5 +1,5 @@
 import json
-from Evaluadores import *
+#from Evaluadores import *
 from Automatas import *
 
 alfabeto = []
