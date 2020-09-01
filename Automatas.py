@@ -1,5 +1,7 @@
 import json
 from collections import OrderedDict
+from Evaluadores import *
+
 class Automatas:
 
   def definirTipo(self,transiciones):
@@ -102,9 +104,9 @@ class Automatas:
        transhelp.append((test[2],alp,val))  
 
 
-   print(transhelp)
-   print("----------Estados------------------")
-   print(states)
+   #print(transhelp)
+   #print("----------Estados------------------")
+   #print(states)
 
    
    #print(states)
@@ -116,7 +118,7 @@ class Automatas:
          val=True
          if est != accepting and val==True:
            accepting_states.append(est)   
-   print(accepting_states)
+   #print(accepting_states)
    
    #print(cerraduradeltaEpsilon)
    transicionesfinales=[]
@@ -125,9 +127,23 @@ class Automatas:
        transicionesfinales.append((t[0],t[1],t[2]))
    
    #print(transicionesfinales)
+   #print("Ingrese Cadena a evaluar")
+   src=input()
+   ev = Evaluadores()
+   ev.dfa_evaluate(alphabet,states,initial_state,accepting_states,transicionesfinales,src)
+   
 
   def expresionregular(self,expresion):
-    val=True
+   alfabeto = []
+   estados = []
+   estados_iniciales = []
+   estados_aceptados = []
+   transiciones = {}
+   for evaluando in expresion:
+     if evaluando.isalpha() ==True and evaluando not in alfabeto:
+       alfabeto.append(evaluando)
+
+         
 
   
         
