@@ -3,10 +3,6 @@ from collections import OrderedDict
 from Evaluadores import *
 
 class Automatas:
-
-  def definirTipo(self,transiciones):
-    return 1
-
         
   def nfae_dfa(self,alphabet, states, initial_state, accepting_states, transitions):
    
@@ -109,7 +105,7 @@ class Automatas:
    #print(states)
 
    
-   #print(states)
+   #print(states)A
     
    for accepting in accepting_states:
      val=False
@@ -127,7 +123,7 @@ class Automatas:
        transicionesfinales.append((t[0],t[1],t[2]))
    
    #print(transicionesfinales)
-   #print("Ingrese Cadena a evaluar")
+   print("Ingrese Cadena a evaluar")
    src=input()
    ev = Evaluadores()
    ev.dfa_evaluate(alphabet,states,initial_state,accepting_states,transicionesfinales,src)
@@ -143,7 +139,11 @@ class Automatas:
      if evaluando.isalpha() ==True and evaluando not in alfabeto:
        alfabeto.append(evaluando)
 
-         
+   if expresion[1]=="+":
+    print(expresion) 
+   if expresion[1]=="*":
+    print(expresion)
+
 
   
         

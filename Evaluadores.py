@@ -28,9 +28,8 @@ class Evaluadores():
             print ("No pertenece a L(M)")
        else:
                print ("No pertenece a L(M)")
-       self.imprimir(states,transitions)
+       self.printAutomaton(states,transitions)
          
-
    def returnNextState(self,transitions,initial_state,source): 
     for trans in transitions:
        if(trans[0]==initial_state and trans[1]==source):
@@ -38,14 +37,13 @@ class Evaluadores():
        
     return -1 
 
-   def imprimir(self, estados, transiciones):
-    G = nx.Graph()
-    G.add_nodes_from(estados)
-    newtrans=[]
+   def printAutomaton(self, estados, transiciones):
+    Graph = nx.DiGraph()
+    for states in estados:
+         if states in transiciones:
+            Graph.add_node(states)
     for trans in transiciones:
-       newtrans.append((trans[0],trans[2]))
-    print(newtrans)   
-    G.add_edges_from(newtrans)
-    nx.draw(G,with_labels=True)
+            Graph.add_edge(trans[2], trans[0])
+    nx.draw(Graph, with_labels = True)
     plt.show()
    

@@ -11,44 +11,36 @@ op=input()
 ev=Automatas()
 con=Evaluadores()
 if op=="1":
- alfabeto = []
- estados = []
- estados_iniciales = []
- estados_aceptados = []
- transiciones = {}
+
  with open('evaluandodfa.json') as contenido:
-  defincionAutomata = json.load(contenido)
-  for automataValores in defincionAutomata['Automata']:
-        alfabeto = automataValores['alphabet']
-        estados = automataValores['states']
-        estados_iniciales = automataValores['initial_state']
-        estados_aceptados = automataValores['accepting_states']
-        transiciones = automataValores['transitions']
+  Automaton = json.load(contenido)
+  for automatonValues in Automaton['Automata']:
+        alphabet = automatonValues['alphabet']
+        states = automatonValues['states']
+        initial_states = automatonValues['initial_state']
+        accepting_states = automatonValues['accepting_states']
+        transitions = automatonValues['transitions']
 
                 
  print("Ingrese cadena a evaluar:")
  src=input()
 
- con.dfa_evaluate(alfabeto,estados,estados_iniciales,estados_aceptados,transiciones,src)
+ con.dfa_evaluate(alphabet, states, initial_states, accepting_states, transitions,src)
 
 if op=="2":
- alfabeto = []
- estados = []
- estados_iniciales = []
- estados_aceptados = []
- transiciones = {}
+ 
  with open('evaluando.json') as contenido:
-  defincionAutomata = json.load(contenido)
-  for automataValores in defincionAutomata['Automata']:
-        alfabeto = automataValores['alphabet']
-        estados = automataValores['states']
-        estados_iniciales = automataValores['initial_state']
-        estados_aceptados = automataValores['accepting_states']
-        transiciones = automataValores['transitions']
+  Automaton= json.load(contenido)
+  for automatonValues in Automaton['Automata']:
+        alphabet = automatonValues['alphabet']
+        states = automatonValues['states']
+        initial_states = automatonValues['initial_state']
+        accepting_states = automatonValues['accepting_states']
+        transitions = automatonValues['transitions']
 
- print(alfabeto)                  
+ #print(alphabet)                  
   
- ev.nfae_dfa(alfabeto,estados,estados_iniciales,estados_aceptados,transiciones)
+ ev.nfae_dfa(alphabet, states, initial_states, accepting_states, transitions)
 
 if op =="3":
       print("Ingrese su Expresion Regular:")
