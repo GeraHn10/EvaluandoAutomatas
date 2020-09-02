@@ -116,13 +116,13 @@ class Automatas:
            accepting_states.append(est)   
    #print(accepting_states)
    
-   #print(cerraduradeltaEpsilon)
+  
    transicionesfinales=[]
    for t in transhelp:
      if(t[2]!=''):
        transicionesfinales.append((t[0],t[1],t[2]))
-   
-   #print(transicionesfinales)
+  #  print("-----Transiciones Finales -------")
+  #  print(transicionesfinales)
    print("Ingrese Cadena a evaluar")
    src=input()
    ev = Evaluadores()

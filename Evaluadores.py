@@ -14,7 +14,7 @@ class Evaluadores():
         
          current_char = str_test[char_index]
          next_state = self.returnNextState(transitions,current_state,current_char)
-         print (current_state, current_char, next_state)
+         print (current_state, " con "+ current_char, " llega a:"+ next_state)
          current_state = next_state
 
          if(current_state==-1):

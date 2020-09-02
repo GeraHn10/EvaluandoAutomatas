@@ -12,7 +12,7 @@ ev=Automatas()
 con=Evaluadores()
 if op=="1":
 
- with open('evaluandodfa.json') as contenido:
+ with open('dfasimple.json') as contenido:
   Automaton = json.load(contenido)
   for automatonValues in Automaton['Automata']:
         alphabet = automatonValues['alphabet']
@@ -29,7 +29,7 @@ if op=="1":
 
 if op=="2":
  
- with open('evaluando.json') as contenido:
+ with open('nfaePresentacion.json') as contenido:
   Automaton= json.load(contenido)
   for automatonValues in Automaton['Automata']:
         alphabet = automatonValues['alphabet']
